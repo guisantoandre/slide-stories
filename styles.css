@@ -1,0 +1,105 @@
+body {
+   font-family: sans-serif;
+   font-size: 1.25rem;
+   background-color: ghostwhite;
+   margin: 20px;
+}
+
+/*
+* Some settings for mobile issues
+*/
+body.paused {
+   user-select: none;
+   -webkit-user-select: none;
+   -webkit-touch-callout: none;
+   text-size-adjust: none;
+   -webkit-text-size-adjust: none;
+   touch-action: manipulation;
+}
+
+img,
+video {
+   max-width: 100%;
+   display: block;
+}
+
+h1 {
+   text-align: center;
+   font-size: 2rem;
+}
+
+#slide {
+   display: grid;
+   position: relative;
+   max-width: 900px;
+   margin: auto;
+}
+#slide-elements {
+   grid-area: 1/1;
+   display: grid;
+}
+#slide-elements > * {
+   grid-area: 1/1;
+   opacity: 0;
+   visibility: none;
+   border-radius: 5px;
+}
+#slide-elements > .active {
+   opacity: 1;
+   visibility: visible;
+}
+
+#slide-controls {
+   grid-area: 1/1;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+#slide-controls button {
+   opacity: 0;
+   appearance: none;
+   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.sound {
+   position: absolute;
+   bottom: 5px;
+   right: 5px;
+   display: inline-block;
+   padding: 1rem;
+   color: rgba(255, 255, 255, 0.4);
+   cursor: pointer;
+   z-index: 10;
+}
+
+#progress-bar {
+   display: flex;
+   position: absolute;
+   width: 100%;
+   pointer-events: none;
+}
+#progress-bar > span {
+   flex: 1;
+   display: block;
+   height: 4px;
+   background-color: rgba(255, 255, 255, 0.3);
+   margin: 5px;
+   border-radius: 4px;
+   overflow: hidden;
+}
+#progress-bar .progress-item.active {
+   display: block;
+   height: inherit;
+   background-color: rgba(255, 255, 255, 0.9);
+   border-radius: 4px;
+   transform: translateX(-100%);
+   animation: progressbar forwards linear running;
+}
+#progress-bar .progress-item.paused {
+   animation-play-state: paused;
+}
+
+@keyframes progressbar {
+   to {
+      transform: initial;
+   }
+}

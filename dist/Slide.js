@@ -52,7 +52,7 @@ export default class Slide {
             this.autoVideo(this.slide);
             const volumeButton = document.createElement("img");
             volumeButton.className = "sound active";
-            volumeButton.src = "./assets/icons/soundon.svg";
+            volumeButton.src = "./assets/icons/soundoff.svg";
             this.slide.insertAdjacentElement("afterend", volumeButton);
         }
         else {
@@ -69,9 +69,9 @@ export default class Slide {
                 const soundButton = document.querySelector("img.sound");
                 soundButton?.addEventListener("click", () => {
                     video.muted ? (video.muted = false) : (video.muted = true);
-                    soundButton.src.includes("soundon.svg")
-                        ? (soundButton.src = "./assets/icons/soundoff.svg")
-                        : (soundButton.src = "./assets/icons/soundon.svg");
+                    soundButton.src.includes("soundoff.svg")
+                        ? (soundButton.src = "./assets/icons/soundon.svg")
+                        : (soundButton.src = "./assets/icons/soundoff.svg");
                 });
             }
             firstPlay = false;

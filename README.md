@@ -8,7 +8,7 @@ Instagram slide stories clone made with typescript
 
 ![ezgif com-video-to-gif11](https://user-images.githubusercontent.com/35943439/222225934-905ea513-5471-4482-940c-8a346e40606f.gif)
 
-1. The HTML structure (the ids MUST be the same of the image below): <br>
+1. The HTML structure (the ids MUST be the same of the code below): <br>
   ```
   <div id="slide">
     <div id="slide-elements">
